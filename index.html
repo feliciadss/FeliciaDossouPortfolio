@@ -1,173 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-        .about-me {
-            text-align: center;
-            padding: 50px 0;
-        }
-        .about-me h1 {
-            font-size: 28px;
-            margin: 0;
-        }
-        .about-me p {
-            font-size: 18px;
-            color: #666;
-        }
-        .project {
-            background: white;
-            padding: 20px;
-            margin-bottom: 10px;
-            text-align: left;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .project-title {
-            color: #333;
-            font-size: 28px; /* Increased font size */
-            margin: 0;
-        }
-        .project-date {
-            color: #999;
-            font-size: 18px;
-        }
-        .project-description {
-            color: #333;
-            font-size: 18px;
-        }
-        .project a {
-            text-decoration: none;
-            color: #0066ff;
-            font-size: 18px;
-        }
-        .project-title a:hover {
-            color: red;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio Website</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+    .language-buttons {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 0;
+      gap: 10px;
+    }
+    .language-buttons button {
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .about-me {
+      text-align: center;
+      padding: 50px 0;
+    }
+    .about-me h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    .about-me p {
+      font-size: 18px;
+      color: #666;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      margin-bottom: 10px;
+      text-align: left;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .project-title {
+      color: #333;
+      font-size: 28px;
+      margin: 0;
+    }
+    .project-date {
+      color: #999;
+      font-size: 18px;
+    }
+    .project-description {
+      color: #333;
+      font-size: 18px;
+    }
+    .project a {
+      text-decoration: none;
+      color: #0066ff;
+      font-size: 18px;
+    }
+    .project-title a:hover {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- About Me Section -->
-        <div class="about-me">
-            <h1>I'm Félicia Dossou</h1>
-            <p>This is my portfolio website to show all the projects I have worked on throughout the years.</p>
-        </div>
-        
-        <!-- Project 1 -->
-        <div class="project">
-            <p class="project-date">Date: May 2025</p>
-            <h2 class="project-title"><a href="https://github.com/feliciadss/kalman (1).pdf" target="_blank">State Estimation with the Kalman Filter: From Simulation to Real Data (FR)</a></h2>
-            <p class="project-description">This project investigates the Kalman filter in both 1D and multidimensional settings to estimate physical quantities such as position, speed, and acceleration. The first part presents a detailed derivation and implementation of the 1D Kalman filter in a simulated radar-tracking scenario, illustrating the filter’s prediction and correction steps, noise modeling, and convergence properties. The second part applies the multidimensional Kalman filter to real sensor data collected during a parabolic flight. The model includes altitude and vertical speed, governed by equations of uniformly accelerated motion. Results show the filter's ability to smooth noisy measurements, estimate unmeasured states, and quantify uncertainty through confidence ellipses. The project also discusses Schur-stability, the behavior of the Riccati equation, and the practical robustness of the Kalman filter in real-world conditions.</p>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project">
-            <p class="project-date">Date: Apr 2025</p>
-            <h2 class="project-title"><a href="https://github.com/feliciadss/projet_envi2 (2).pdf" target="_blank">Reducing Uncertainty in Climate Projections with Statistical Methods (FR)</a></h2>
-            <p class="project-description">This project investigates how to reduce uncertainty in future temperature projections using CMIP6 climate model outputs and historical observations. Four methods are compared: (1) simple multi-model averaging, (2) weighted averaging based on model performance and independence (Brunner method), (3) linear regression using emergent constraints, and (4) the Kalman filter (univariate and multivariate forms). Each method is tuned to optimize predictive performance using cross-validation or RMSE. The Kalman filter provides a Bayesian approach to combining observations and model ensembles, using analytical updates under Gaussian assumptions. Multivariate extensions (PCA, random forests) are also tested. Results show that the Kalman filter and linear regression reduce uncertainty by up to 30%, though performance depends on model assumptions and predictor design. This study highlights the trade-offs between simplicity, interpretability, and predictive accuracy in climate ensemble post-processing.</p>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project">
-            <p class="project-date">Date: Apr 2025</p>
-            <h2 class="project-title"><a href="https://github.com/feliciadss/elephant (3).pdf" target="_blank">Asymptotic Analysis of the Elephant Random Walk (FR)</a></h2>
-            <p class="project-description">This project explores the long-memory Elephant Random Walk, where each step depends on a random past step, modulated by a memory parameter p ∈[0,1]. We study the asymptotic behavior of the walk using martingale theory. The work includes the construction of associated martingales, analysis of the increasing process, convergence results, and a central limit theorem. Simulations illustrate the different regimes (diffusive, critical, superdiffusive), and a statistical method is implemented to estimate the memory parameter.</p>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project">
-            <p class="project-date">Date: Feb 2025</p>
-            <h2 class="project-title"><a href="https://github.com/feliciadss/projet.html" target="_blank">Occupancy Modelling and Power Analysis of Trithemis annulata in Urban Wetlands (FR)</a></h2>
-            <p class="project-description">This project uses occupancy models to study the distribution of Trithemis annulata, a thermophilic dragonfly species, in Bordeaux Métropole. Two simulation studies assess the statistical power to detect an effect of land artificialization under different sampling designs. In the homogeneous design (25 fixed sites over 5 years), the power was insufficient to detect a moderate effect (β = –2). A mixed design combining fixed and rotating sites yielded slightly better detection rates. Real data from citizen science programs (2018–2023) were then used to model species occurrence as a function of urbanization (MOS11) and detectability as a function of weather conditions and vegetation. The results showed no significant effect of landscape variables, while temperature emerged as the only strong predictor of detection. Power simulations based on the real sampling design confirmed a low capacity (≈17%) to detect a true effect. These findings highlight the need to adapt monitoring strategies—through increased effort or climate-aware sampling—to improve the reliability of ecological inferences.</p>
-        </div>
-        
-        
-        <!-- Project 5 -->
-        <div class="project">
-            <p class="project-date">Date: Jan 2025</p>
-            <h2 class="project-title"><a href="https://github.com/feliciadss/Projet-Visualisation-Analytique-M1" target="_blank">Music Genre Analysis in Europe: Spotify API Application (FR)</a></h2>
-            <p class="project-description">This application provides insights into the popularity and evolution of music genres across Europe, supporting music labels in strategic decision-making. Leveraging data from the Spotify API, it enables users to explore trends, analyze artist collaborations, and monitor genre growth or decline across various countries. Featuring a MongoDB-SQLite data pipeline for efficient data management and a Dash-powered user-friendly interface, the app offers interactive visualizations on genre evolution, artist collaborations, and genre-specific characteristics, empowering labels to identify promising investment opportunities and emerging market dynamics.</p>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project">
-            <p class="project-date">Date: Dec 2024</p>
-            <h2 class="project-title"><a href="Projet_M1.pdf" target="_blank">Model Selection in Linear Regression: ANSUR II Anthropometric Dataset (FR)</a></h2>
-            <p class="project-description">This project focuses on selecting the most relevant variables to predict body weight from the ANSUR II dataset, which includes 93 anthropometric measurements from over 6,000 individuals. Using stepwise selection methods (Backward and Forward), the study evaluates models based on multiple criteria, such as Adjusted R², AIC, BIC, and PRESS. Dimensionality reduction techniques, including PCA and clustering, are applied to streamline the variable selection process while maintaining high predictive accuracy. The results highlight key predictors of body weight, offering insights into modeling strategies for complex datasets.</p>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="project">
-            <p class="project-date">Date: Dec 2024</p>
-            <h2 class="project-title"><a href="Bouhendjeur.Dossou.pdf" target="_blank">Multivariate Analysis of Ozone Concentrations in Périgueux 2024 (FR)</a></h2>
-            <p class="project-description">This project explores the factors influencing ozone (O₃) concentrations in Périgueux throughout 2024, focusing on Principal Component Analysis (PCA) to uncover patterns and relationships among variables. Key findings reveal that ozone levels are strongly influenced by meteorological factors such as temperature, humidity, and wind speed. Seasonal trends show higher concentrations during summer, driven by elevated temperatures and dry conditions, while autumn and winter are characterized by lower levels due to increased humidity and precipitation. The study provides a comprehensive understanding of the atmospheric dynamics affecting ozone, supporting informed environmental decision-making.</p>
-        </div>
-
-        <!-- Project 8 -->
-        <div class="project">
-            <p class="project-date">Date: Apr 2024</p>
-            <h2 class="project-title"><a href="Rendu_GTA.pdf" target="_blank">Study of the Concept of Average in a Complex Geographical Region: Croatia (FR)</a></h2>
-            <p class="project-description">This project explores the calculation and definition of an average in a non-convex geographical context, specifically focusing on Croatia. Given Croatia's crescent-shaped, non-convex structure, conventional averaging methods may result in a mean value that lies outside the country's borders—an impractical and unacceptable outcome. The research seeks to develop an alternative definition of "average" that remains within the geographic boundaries, maintaining the properties of a traditional average when applied to convex spaces.</p>
-        </div>
-
-        <!-- Project 9 -->
-        <div class="project">
-            <p class="project-date">Date: Dec 2023</p>
-            <h2 class="project-title"><a href="Group5_EmployeeAttritionFactors.pdf" target="_blank">Employee Attrition Factors Analysis (EN)</a></h2>
-            <p class="project-description">This group project uses R to analyze employee attrition, applying data mining techniques such as Logistic Regression and Decision Tree Regression. The study focuses on identifying patterns in employee turnover, involving data preprocessing, and evaluating model performance with accuracy metrics and confusion matrices.</p>
-        </div>
-
-        <!-- Project 10 -->
-        <div class="project">
-            <p class="project-date">Date: Nov 2023</p>
-            <h2 class="project-title"><a href="ITS65704_G15_Sec0304.pdf" target="_blank">E-Commerce Sales Optimization Analysis (EN)</a></h2>
-            <p class="project-description">This group project utilizes data science techniques to analyze e-commerce data, focusing on customer behaviors and transaction patterns. Using Python and libraries like Pandas and Matplotlib, the study cleans and explores a UK-based e-commerce dataset. Machine learning models, including Linear Regression and Gradient Boosting Regressor, are applied for sales prediction to optimize e-commerce strategies.</p>
-        </div>
-
-        <!-- Project 11 -->
-        <div class="project">
-            <p class="project-date">Date: Oct 2023</p>
-            <h2 class="project-title"><a href="DM midterm.pdf" target="_blank">Logistic Regression Analysis of Hepatitis Predictors (EN)</a></h2>
-            <p class="project-description">This study applies logistic regression using R to identify key predictors of Hepatitis. It involves data handling and analysis without specifying specific attributes, with a strong emphasis on evaluating the performance and accuracy of the models.</p>
-        </div>
-
-        <!-- Project 12 -->
-        <div class="project">
-            <p class="project-date">Date: Oct 2023</p>
-            <h2 class="project-title"><a href="Group5_%20MalaysiasCPIDynamicsAndBusinessImpact%20.pdf" target="_blank">Malaysia's Consumer Price Index Analysis (EN)</a></h2>
-            <p class="project-description">This study examines Malaysia's Consumer Price Index (CPI) from 2021 to 2023, using RStudio for data analysis and visualization. The research focuses on the CPI's impact on different sectors and its relation to consumer demand and economic stability. It provides insights for businesses and consumers on market strategies and living expenses.</p>
-        </div>
-
-        <!-- Project 13 -->
-        <div class="project">
-            <p class="project-date">June 2022</p>
-            <h2 class="project-title"><a href="rapport de stage Accenture.pdf" target="_blank">Data Science in Strategic Consulting: Internship at Accenture Research (EN)</a></h2>
-            <p class="project-description">This internship report examines the use of data science at Accenture Research, focusing on strategic analysis and cloud strategy evaluation. Using tools like R and Python, key projects involved data analysis, econometrics, and data visualization. The experience provided insights into the role of data scientists in a global consulting environment and included interviews with industry professionals.</p>
-        </div>
-
-        <!-- Project 14 -->
-        <div class="project">
-            <p class="project-date">May 2022</p>
-            <h2 class="project-title"><a href="QualitAirF3csv.pdf" target="_blank">Air Quality Study in New Zealand in 2021 (FR)</a></h2>
-            <p class="project-description">This study investigates the levels of fine particulate matter PM2.5 in New Zealand in 2021 and compares the data to the World Health Organization standards, utilizing statistical analysis techniques and geospatial visualization with the R programming language and the leaflet library.</p>
-        </div>
-        
-        <!-- Add more projects here -->
+  <div class="container">
+    <div class="language-buttons">
+      <button onclick="setLanguage('en')">ENGLISH</button>
+      <button onclick="setLanguage('fr')">FRANÇAIS</button>
     </div>
+
+    <!-- About Me -->
+    <div class="about-me">
+      <h1 id="about-title">I'm Félicia Dossou</h1>
+      <p id="about-description">
+        This is my portfolio website to show all the projects I have worked on throughout the years.
+      </p>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects-container">
+      <!-- Projects will be inserted by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        aboutTitle: "I'm Félicia Dossou",
+        aboutDescription: "This is my portfolio website to show all the projects I have worked on throughout the years.",
+        projects: [
+          {
+            date: "May 2025",
+            title: "State Estimation with the Kalman Filter: From Simulation to Real Data (FR)",
+            description: "This project investigates the Kalman filter in both 1D and multidimensional settings to estimate physical quantities such as position, speed, and acceleration...",
+            link: "https://github.com/feliciadss/kalman (1).pdf"
+          },
+          {
+            date: "Apr 2025",
+            title: "Reducing Uncertainty in Climate Projections with Statistical Methods (FR)",
+            description: "This project investigates how to reduce uncertainty in future temperature projections using CMIP6 climate model outputs and historical observations...",
+            link: "https://github.com/feliciadss/projet_envi2 (2).pdf"
+          },
+          {
+            date: "Apr 2025",
+            title: "Asymptotic Analysis of the Elephant Random Walk (FR)",
+            description: "This project explores the long-memory Elephant Random Walk, where each step depends on a random past step...",
+            link: "https://github.com/feliciadss/elephant (3).pdf"
+          },
+          {
+            date: "Feb 2025",
+            title: "Occupancy Modelling and Power Analysis of Trithemis annulata in Urban Wetlands (FR)",
+            description: "This project uses occupancy models to study the distribution of Trithemis annulata, a thermophilic dragonfly species...",
+            link: "https://github.com/feliciadss/projet.html"
+          },
+          {
+            date: "Jan 2025",
+            title: "Music Genre Analysis in Europe: Spotify API Application (FR)",
+            description: "This application provides insights into the popularity and evolution of music genres across Europe...",
+            link: "https://github.com/feliciadss/Projet-Visualisation-Analytique-M1"
+          },
+        ]
+      },
+      fr: {
+        aboutTitle: "Je suis Félicia Dossou",
+        aboutDescription: "Ceci est mon portfolio pour présenter tous les projets sur lesquels j'ai travaillé au fil des années.",
+        projects: [
+          {
+            date: "Mai 2025",
+            title: "Estimation d’état avec le filtre de Kalman : de la simulation aux données réelles (FR)",
+            description: "Ce projet étudie le filtre de Kalman en 1D et en dimensions supérieures pour estimer des grandeurs comme la position, la vitesse et l’accélération...",
+            link: "https://github.com/feliciadss/kalman (1).pdf"
+          },
+          {
+            date: "Avril 2025",
+            title: "Réduire l’incertitude des projections climatiques avec des méthodes statistiques (FR)",
+            description: "Ce projet étudie comment réduire l’incertitude des projections de température avec les sorties des modèles CMIP6 et des observations historiques...",
+            link: "https://github.com/feliciadss/projet_envi2 (2).pdf"
+          },
+          {
+            date: "Avril 2025",
+            title: "Analyse asymptotique de la marche aléatoire de l’éléphant (FR)",
+            description: "Ce projet explore la marche de l’éléphant, une marche aléatoire avec mémoire à long terme, à l’aide de la théorie des martingales...",
+            link: "https://github.com/feliciadss/elephant (3).pdf"
+          },
+          {
+            date: "Février 2025",
+            title: "Modélisation d’occupation et analyse de puissance de Trithemis annulata dans les zones humides urbaines (FR)",
+            description: "Ce projet utilise des modèles d’occupation pour étudier la répartition de Trithemis annulata dans Bordeaux Métropole...",
+            link: "https://github.com/feliciadss/projet.html"
+          },
+          {
+            date: "Janvier 2025",
+            title: "Analyse des genres musicaux en Europe : Application Spotify API (FR)",
+            description: "Cette application fournit des analyses sur l’évolution des genres musicaux en Europe, en appui aux décisions stratégiques des labels...",
+            link: "https://github.com/feliciadss/Projet-Visualisation-Analytique-M1"
+          },
+        ]
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById("about-title").innerText = t.aboutTitle;
+      document.getElementById("about-description").innerText = t.aboutDescription;
+
+      const container = document.getElementById("projects-container");
+      container.innerHTML = "";
+      t.projects.forEach(project => {
+        const projectDiv = document.createElement("div");
+        projectDiv.className = "project";
+        projectDiv.innerHTML = `
+          <p class="project-date">Date: ${project.date}</p>
+          <h2 class="project-title">
+            <a href="${project.link}" target="_blank">${project.title}</a>
+          </h2>
+          <p class="project-description">${project.description}</p>
+        `;
+        container.appendChild(projectDiv);
+      });
+    }
+
+    // Initial language
+    setLanguage('en');
+  </script>
 </body>
 </html>
