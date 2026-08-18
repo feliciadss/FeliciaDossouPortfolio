@@ -12,6 +12,34 @@
       background: #f5f5f5;
       color: #333;
     }
+    .confidential-link {
+  position: relative;
+  color: #0066ff;
+  cursor: pointer;
+}
+
+.confidential-link::after {
+  content: attr(data-message);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 8px;
+  padding: 7px 12px;
+  color: white;
+  background: #333;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.confidential-link:hover::after,
+.confidential-link.show-message::after {
+  opacity: 1;
+  visibility: visible;
+}
     .container {
       width: 80%;
       margin: auto;
@@ -97,10 +125,17 @@
         aboutTitle: "I'm Félicia Dossou",
         aboutDescription: "This is my portfolio website to show all the projects I have worked on throughout the years.",
         projects: [
+                    {
+            date: "August 2026",
+            title: "Uncovering Variation in Mutational Signature Exposures Across the Human Cancer Genome (EN)",
+            description: "This confidential research project investigates how the activity of established single-base substitution (SBS) mutational signatures varies across the human cancer genome. Using large-scale cancer genomics data, genomic regions are characterized by their mutational profiles and a broad range of genomic and epigenomic features. Statistical modeling, dimensionality reduction, clustering, and robustness analyses are then applied to identify the factors associated with spatial variation in signature exposures across cancer types. Due to data-access and confidentiality restrictions, the underlying data, detailed results, and complete report cannot be made publicly available.",
+            confidential: true
+         },
           {
             date: "Apr 2026",
             title: "DAMTS13 Conformation and Relapse Risk in iTTP: A Survival Analysis Study (FR)",
             description: "Project conducted with Laboratoire de biomathématiques (BioSTM), INSERM UMR-S 1144, Université Paris Cité and Hôpital Lariboisière (AP-HP), based on confidential clinical data. This study investigates whether the conformation of ADAMTS13, quantified by a conformation index (CI), can predict relapse risk in immune thrombotic thrombocytopenic purpura (iTTP). The methodology combines longitudinal data analysis, survival models (Cox, Andersen-Gill) with time-dependent covariates, and robustness assessments via simulations and bootstrap. Results highlight a biological link between ADAMTS13 activity and its conformation but do not provide a robust prognostic signal for relapse prediction, mainly due to limited sample size and data constraints. The work emphasizes the need for larger longitudinal cohorts and more complete follow-up to properly assess the clinical value of this biomarker."
+            
           },
           {
             date: "Nov 2025",
@@ -112,7 +147,7 @@
             date: "Aug 2025",
             title: "Unsupervised approach for flow cytometry data cleaning (FR)",
             description: "Internship at the Institut de Mathématiques de Bordeaux with the Bordeaux University Hospital. In acute myeloid leukemia diagnosis, excluding debris and dead cells is crucial but still relies on manual expertise, raising issues of time and reproducibility. This project explored unsupervised methods to automate this step, using Gaussian mixture modeling and K-means clustering. While each approach has limitations, the results are promising and represent a first step toward a reliable automated pipeline for cytometry data cleaning.",
-            link: "https://feliciadss.github.io/FeliciaDossouPortfolio/stage_cytometrie_final.pdf"
+            confidential: true
           },
 
           {
@@ -206,6 +241,13 @@
         aboutDescription: "Ceci est mon portfolio pour présenter tous les projets sur lesquels j'ai travaillé au fil des années.",
         projects: [
           {
+              "date": "Août 2026",
+              "title": "Analyse de la variabilité des signatures mutationnelles à travers le génome des cancers humains (EN)",
+              "description": "Ce projet de recherche confidentiel étudie la manière dont l’activité de signatures mutationnelles établies de substitutions de bases simples (SBS) varie à travers le génome humain dans différents cancers. À partir de données génomiques à grande échelle, les régions du génome sont caractérisées selon leurs profils mutationnels ainsi qu’un large ensemble de caractéristiques génomiques et épigénomiques. Des méthodes de modélisation statistique, de réduction de dimension, de classification non supervisée et d’analyse de robustesse sont ensuite utilisées afin d’identifier les facteurs associés aux variations spatiales de l’exposition aux signatures entre les différents types de cancer. En raison des restrictions d’accès et de confidentialité, les données, les résultats détaillés et le rapport complet ne peuvent pas être rendus publics.",
+              confidential: true
+            
+            },
+          {
               "date": "Avril 2026",
               "title": "Conformation d’ADAMTS13 et risque de rechute dans le PTTi : analyse de survie (FR)",
               "description": "Projet réalisé avec le Laboratoire de biomathématiques (BioSTM), INSERM UMR-S 1144, Université Paris Cité et l’Hôpital Lariboisière (AP-HP), à partir de données cliniques confidentielles. Ce travail étudie le potentiel pronostique de la conformation d’ADAMTS13, mesurée par un indice de conformation (IC), pour prédire le risque de rechute dans le purpura thrombotique thrombocytopénique auto-immun (PTTi). L’approche combine analyse de données longitudinales, modèles de survie (Cox, Andersen-Gill) avec covariables dépendantes du temps, et analyses de robustesse par simulations et bootstrap. Les résultats mettent en évidence un lien biologique entre activité enzymatique et conformation, sans toutefois révéler de signal pronostique robuste pour prédire les rechutes, en raison notamment d’un effectif limité et de contraintes structurelles des données. Ce travail souligne la nécessité de cohortes plus larges et d’un suivi longitudinal enrichi pour évaluer pleinement l’intérêt clinique de ce biomarqueur."
@@ -220,7 +262,7 @@
               "date": "Août 2025",
               "title": "Approche non supervisée pour le nettoyage de données de cytométrie en flux (FR)",
               "description": "Stage à l’Institut de Mathématiques de Bordeaux en collaboration avec le CHU de Bordeaux. Dans le diagnostic de la leucémie aiguë myéloblastique, l’exclusion des débris et cellules mortes reste une étape manuelle, chronophage et peu reproductible. Ce travail a exploré des méthodes non supervisées pour automatiser ce processus, en combinant des modèles de mélanges gaussiens et des approches de clustering par K-means. Les résultats, encore perfectibles, constituent une première étape vers un pipeline automatisé et robuste pour le nettoyage des données de cytométrie.",
-              "link": "https://feliciadss.github.io/FeliciaDossouPortfolio/stage_cytometrie_final.pdf"
+              confidential: true
             },
 
           {
@@ -321,13 +363,33 @@
       t.projects.forEach(project => {
         const projectDiv = document.createElement("div");
         projectDiv.className = "project";
-        projectDiv.innerHTML = `
-          <p class="project-date">Date: ${project.date}</p>
-          <h2 class="project-title">
-            <a href="${project.link}" target="_blank">${project.title}</a>
-          </h2>
-          <p class="project-description">${project.description}</p>
-        `;
+        const projectTitle = project.confidential
+  ? `
+    <span
+      class="confidential-link"
+      data-message="${lang === "fr" ? "Projet confidentiel" : "Confidential project"}"
+      onclick="this.classList.toggle('show-message')"
+    >
+      ${project.title}
+    </span>
+  `
+  : `
+    <a href="${project.link}" target="_blank" rel="noopener noreferrer">
+      ${project.title}
+    </a>
+  `;
+
+projectDiv.innerHTML = `
+  <p class="project-date">
+    ${lang === "fr" ? "Date" : "Date"}: ${project.date}
+  </p>
+
+  <h2 class="project-title">
+    ${projectTitle}
+  </h2>
+
+  <p class="project-description">${project.description}</p>
+`;
         container.appendChild(projectDiv);
       });
     }
